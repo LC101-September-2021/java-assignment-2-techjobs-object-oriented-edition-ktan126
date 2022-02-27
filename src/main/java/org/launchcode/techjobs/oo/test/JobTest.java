@@ -15,8 +15,6 @@ import static org.junit.Assert.*;
 @RunWith(JUnit4.class)
 public class JobTest {
 
-
-
     @Test
     public void testSettingJobId() {
 
@@ -46,10 +44,12 @@ public class JobTest {
 
     @Test
     public void testJobsForEquality() {
-        Job job = new Job("", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job job1 = new Job("", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job job2 = new Job("", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));
 
-        assertFalse(job instanceof Job != job instanceof Job);
+        assertFalse(job1.equals(job2));
     }
+
     @Test
     public void testToStringStartsAndEndsWithNewLine(){
         Job job = new Job("", new Employer("ACME"), new Location(""), new PositionType("Quality control"), new CoreCompetency("Persistence"));

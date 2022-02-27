@@ -39,17 +39,37 @@ public class Job {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Job)) return false;
+        if (o == null || getClass() != o.getClass()) return false;
         Job job = (Job) o;
         return id == job.id;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, employer, location, positionType, coreCompetency);
+        return Objects.hash(id);
     }
 
-    // end generate hashcode
+
+    @Override
+    public String toString() {
+        if (this.getName().equals("")) {
+            this.setName("Data not available");
+        } if (this.getEmployer().getValue().equals("")) {
+            this.setEmployer(new Employer("Data not available"));
+        } if (this.getLocation().getValue().equals("")) {
+            this.setLocation(new Location("Data not available"));
+        } if (this.getPositionType().getValue().equals("")) {
+            this.setPositionType(new PositionType("Data not available"));
+        } if (this.getCoreCompetency().getValue().equals("")) {
+            this.setCoreCompetency(new CoreCompetency("Data not available"));
+        } return "\n" +
+                "ID: " + this.id + '\n' +
+                "Name: " + this.name + '\n' +
+                "Employer: " + this.employer + '\n' +
+                "Location: " + this.location + '\n' +
+                "Position Type: " + this.positionType + '\n' +
+                "Core Competency: " + this.coreCompetency + '\n';
+    }
 
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.

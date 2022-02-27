@@ -13,19 +13,19 @@ public class PositionType extends JobField {
     //  their id fields match.
 
     //begin generated equal and hashCode - KT
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof PositionType)) return false;
-        PositionType that = (PositionType) o;
-        return getId() == that.getId();
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getId());
-    }
+//
+//    @Override
+//    public boolean equals(Object o) {
+//        if (this == o) return true;
+//        if (!(o instanceof PositionType)) return false;
+//        PositionType that = (PositionType) o;
+//        return getId() == that.getId();
+//    }
+//
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(getId());
+//    }
 
     // Getters and Setters:
 
